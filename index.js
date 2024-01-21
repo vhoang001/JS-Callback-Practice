@@ -1,9 +1,32 @@
 const inventory = newInventory()
 move(inventory).to(0, 0)
 
-const character = newImage('assets/green-character/static.gif')
-move(character).to(100, 250)
 
+// const character = newImage('assets/green-character/static.gif')
+// move(character).withArrowKeys(100, 250) // move function to move the character using arrow key
+
+// const tree = newImage('assets/tree.png')
+// move(tree).withArrowKeys(200, 450)
+
+const character = newImage('assets/green-character/static.gif')
+
+
+move(character).withArrowKeys(100, 250, handleDirectionChange)
+function handleDirectionChange(direction){
+    if(direction === null){
+        character.src = 'assets/green-character/static.gif'
+    } else if(direction === 'west'){
+        character.src = 'assets/green-character/west.gif'
+    } else if(direction === 'north'){
+        character.src = 'assets/green-character/north.gif'
+    } else if(direction === 'east'){
+        character.src = 'assets/green-character/east.gif'
+    } else if(direction === 'south'){
+        character.src = 'assets/green-character/south.gif'
+    } else {
+        return
+    }
+}
 
 move(newImage('assets/tree.png')).to(200, 450)
 move(newImage('assets/pillar.png')).to(350, 250)
