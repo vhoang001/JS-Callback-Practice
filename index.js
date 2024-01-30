@@ -3,15 +3,14 @@ move(inventory).to(0, 0)
 
 
 // const character = newImage('assets/green-character/static.gif')
-// move(character).withArrowKeys(100, 250) // move function to move the character using arrow key
+// move(character).withArrowKeys(100, 250) 
 
-// const tree = newImage('assets/tree.png')
-// move(tree).withArrowKeys(200, 450)
+const tree = newImage('assets/tree.png')
+move(tree).withArrowKeys(200, 450)
 
-const character = newImage('assets/green-character/static.gif')
+ const character = newImage('assets/green-character/static.gif')
 
-
-move(character).withArrowKeys(100, 250, handleDirectionChange)
+move(character).withArrowKeys(100, 250, handleDirectionChange) // move function to move the character using arrow key
 function handleDirectionChange(direction){
     if(direction === null){
         character.src = 'assets/green-character/static.gif'
